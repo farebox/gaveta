@@ -10,7 +10,6 @@
     "dist/*",
     "src/**/*.vue"
   ],
-  "sideEffects": false,
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
     "deploy": "npm run build-dev; npm run gh-pages",
@@ -50,8 +49,5 @@
   },
   "engines": {
     "node": ">=12"
-  },
-  "vue": {
-    "publicPath": "/gaveta/"
   }
 }

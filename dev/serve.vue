@@ -132,8 +132,7 @@
 </template>
 
 <script>
-import '../node_modules/normalize.css';
-import '../node_modules/milligram/dist/milligram.min.css';
+
 
 import Vue from 'vue';
 import Gaveta from '@/gaveta.vue';
@@ -152,7 +151,8 @@ export default Vue.extend({
 </script>
 
 <style>
-
+@import '../node_modules/normalize.css';
+@import '../node_modules/milligram/dist/milligram.min.css';
 
 html {
   background: rgb(34, 193, 195);
