@@ -1,7 +1,7 @@
 {
   "name": "gaveta",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "The open-source and mobile-friendly drawer component bulit for Vue.js",
   "main": "dist/gaveta.ssr.js",
   "browser": "dist/gaveta.esm.js",
   "module": "dist/gaveta.esm.js",
