@@ -17,11 +17,12 @@
  * Customizable title and close affordance
  * Vue2 and Vue3 compatible
  * Configurable with CSS variables
+ * Sensible and minimal stylesheet that's probably compatible with your framework of choice
  * Mobile optimized sizing, without need to target screen sizes within drawer content
  * Powered by Vue's transition framework
  * Uses CSS 3d transforms for hardware acceleration on some devices
- * Works with any CSS framework
  * Visibility is fully controlled by parent component
+ * Close button automatically captures focus and listens for `esc` key
 
 ---
 
