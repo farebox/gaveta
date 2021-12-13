@@ -2,7 +2,7 @@
 
 ## A flexible drawer for your UI
 
-#### Meet <strong>Gaveta</strong>, the open-source and mobile-friendly drawer component bulit for Vue.js. Put anything you want in this drawer and have it animate into and out of your interface beautifully using Vue's transition framework.
+#### Meet <strong>Gaveta</strong>, the open-source and mobile-friendly drawer component built for Vue.js. Put anything you want in this drawer and have it animate into and out of your interface beautifully using Vue's transition framework.
   
 <slot>
 
