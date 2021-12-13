@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <h1>Gaveta.vue</h1>
+  <main class="container">
+    <h1><strong>Gaveta.vue</strong></h1>
     <h2>A flexible drawer for your UI</h2>
 
     <h4>
@@ -128,11 +128,11 @@
 }
 </code></pre>
     </Gaveta>
-  </div>
+  </main>
 </template>
 
 <script>
-import 'milligram';
+
 
 import Vue from 'vue';
 import Gaveta from '@/gaveta.vue';
@@ -151,6 +151,9 @@ export default Vue.extend({
 </script>
 
 <style>
+@import '../node_modules/normalize.css';
+@import '../node_modules/milligram/dist/milligram.min.css';
+
 html {
   background: rgb(34, 193, 195);
   background: linear-gradient(
@@ -170,13 +173,13 @@ h1 {
   font-weight: bold;
 }
 
-#app {
+.container {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
-  padding: 1em;
+  font-weight: 400;
+  padding-top: 60px !important;
 }
 
 </style>

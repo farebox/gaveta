@@ -1,10 +1,11 @@
 <template>
   <span>
     <transition name="drawer" appear>
-      <div v-if="active" class="drawer is-medium">
-        <span
+      <div v-if="active" class="drawer is-medium" >
+        <button
           class="close-button"
           @click="close"
+          @keyup.esc="close" v-focus
           :class="{ 'is-default': !$slots.close }"
         >
           <template v-if="$slots.close"><slot name="close" /></template>
@@ -15,7 +16,7 @@
               ></path>
             </svg>
           </template>
-        </span>
+        </button>
         <template v-if="$slots.title">
           <h3 class="gaveta-title"><slot name="title" /></h3>
         </template>
@@ -33,6 +34,13 @@
 export default {
   props: {
     active: { type: Boolean, default: false },
+  },
+  directives: {
+    focus: {
+      inserted(elem) {
+        elem.focus();
+      },
+    },
   },
   methods: {
     close() {
@@ -68,15 +76,21 @@ export default {
   float: right;
   padding: 0.25em;
   cursor: pointer;
-  margin: 0.5em 0;
+  border: none;
+  
+  background: transparent;
+  color: inherit;
 }
 
 .close-button.is-default {
   fill: var(--gaveta-background, rgba(255, 255, 255, 0.851));
   background: var(--gaveta-color, rgba(32, 33, 36, 0.6));
   border-radius: 50%;
+    margin: 0.5em 0;
+
   width: 24px;
   height: 24px;
+  line-height: inherit;
 }
 
 .screen {
