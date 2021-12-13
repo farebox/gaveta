@@ -1,7 +1,7 @@
 <template>
-  <main class="container">
+  <main class="container" id="app">
     <Readme>
-      <button @click="active=true">Show Drawer</button>
+      <button @click="active=true">You Can't Argue With Results</button>
     </Readme>
 
     <Gaveta :active="active" @close="active = false">
