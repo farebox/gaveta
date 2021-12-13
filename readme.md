@@ -1,4 +1,4 @@
-# Gaveta.vue 📦
+# Gaveta.vue
 
 ## A flexible drawer for your UI
 
