@@ -5,7 +5,9 @@
     </Readme>
 
     <Gaveta :active="active" @close="active = false">
-      <template v-slot:title>A flexible drawer for your UI</template>
+      <template v-slot:title>
+        A flexible drawer for your UI
+      </template>
       <!-- <template v-slot:close>Done</template> -->
 
       <p>

@@ -17,8 +17,12 @@
             </svg>
           </template>
         </button>
-        <template v-if="$slots.title">
-          <h3 class="gaveta-title"><slot name="title" /></h3>
+
+        <template v-if="hasTitle">
+          <h3 v-if="bareTitle" class="gaveta-title">
+            <slot name="title" />
+          </h3>
+          <slot v-else name="title" class="gaveta-title" />
         </template>
 
         <slot name="default"></slot>
@@ -42,11 +46,23 @@ export default {
       },
     },
   },
+  computed: {
+    hasTitle() { return this.$slots.title; },
+    bareTitle() {
+      if (this.hasTitle) {
+        return this.$slots.title[0].text
+      }
+      return false;
+    }
+  },
   methods: {
     close() {
       this.$emit('close');
     },
   },
+  mounted() {
+    console.log(this.$slots);
+  }
 };
 </script>
 
@@ -86,7 +102,7 @@ export default {
   fill: var(--gaveta-background, rgba(255, 255, 255, 0.851));
   background: var(--gaveta-color, rgba(32, 33, 36, 0.6));
   border-radius: 50%;
-    margin: 0.5em 0;
+  margin: 0;
 
   width: 24px;
   height: 24px;
@@ -120,8 +136,8 @@ export default {
   padding: var(--gaveta-padding, 1.25em);
 }
 .drawer .gaveta-title {
-  padding-bottom: 0.5em;
-  border-bottom: 1px solid #888;
+  padding-bottom: .5em;
+  border-bottom: 1px solid rgba(128, 128, 128, .5);
 }
 
 .drawer.is-medium {
