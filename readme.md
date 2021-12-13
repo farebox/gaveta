@@ -39,8 +39,10 @@ npm install vue-gaveta
 ```vue
 <template>
   <div>
+    <button @click="active=true">Show it!</button>
+
     <Gaveta :active="active" @close="active=false">
-      /* Info to show when the drawer is open! */
+      👋 Howdy!
     </Gaveta>
   </div>
 </template>
