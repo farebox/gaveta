@@ -38,12 +38,13 @@ npm install vue-gaveta
 
 ```vue
 <template>
-<div>
-  <Gaveta :active="active" @close="active=false">
-    /* Info to show when the drawer is open! */
-  </Gaveta>
-</div>
+  <div>
+    <Gaveta :active="active" @close="active=false">
+      /* Info to show when the drawer is open! */
+    </Gaveta>
+  </div>
 </template>
+
 <script>
 import Gaveta from 'vue-gaveta';
 export default {
@@ -75,10 +76,10 @@ export default {
 
 ```vue
 <Gaveta :active="active" @close="active=false">
-<template v-slot:title>A custom title!</template>
-<template v-slot:close>Pass in anything to click on</template>
+  <template v-slot:title>A custom title!</template>
+  <template v-slot:close>Pass in anything to click on</template>
 
-<template v-slot:default>Default slot can be implied or defined explicitly</template>
+  <template v-slot:default>Default slot can be implied or defined explicitly</template>
 </Gaveta>
 ```
 
