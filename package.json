@@ -1,5 +1,5 @@
 {
-  "name": "Gaveta",
+  "name": "gaveta",
   "version": "1.0.0",
   "description": "",
   "main": "dist/gaveta.ssr.js",
@@ -13,6 +13,9 @@
   "sideEffects": false,
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
+    "deploy": "npm run build-dev; npm run gh-pages",
+    "gh-pages": "gh-pages -d public -b gh-pages",
+    "build-dev": "vue-cli-service build dev/serve.js --dest public",
     "prebuild": "rimraf ./dist",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
@@ -31,6 +34,8 @@
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-service": "^4.5.13",
     "cross-env": "^7.0.3",
+    "gh-pages": "^3.2.3",
+    "milligram": "^1.4.1",
     "minimist": "^1.2.5",
     "rimraf": "^3.0.2",
     "rollup": "^2.52.8",
