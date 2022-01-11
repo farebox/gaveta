@@ -4,7 +4,7 @@
       <button @click="active=true">You Can't Argue With Results</button>
     </Readme>
 
-    <Gaveta :active="active" @close="active = false">
+    <Gaveta :active="active" @close="active = false" size="is-medium">
       <template v-slot:title>
         A flexible drawer for your UI
       </template>

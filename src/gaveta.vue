@@ -1,7 +1,7 @@
 <template>
   <span>
     <transition name="drawer" appear>
-      <div v-if="active" class="drawer is-medium" >
+      <div v-if="active" class="drawer" :class="size">
         <button
           class="close-button"
           @click="close"
@@ -24,7 +24,6 @@
           </h3>
           <slot v-else name="title" class="gaveta-title" />
         </template>
-
         <slot name="default"></slot>
       </div>
     </transition>
@@ -38,6 +37,10 @@
 export default {
   props: {
     active: { type: Boolean, default: false },
+    size: { 
+      type: String, default: 'is-medium',
+      enum: ['is-small', 'is-medium', 'is-large']
+    }
   },
   directives: {
     focus: {
@@ -140,19 +143,38 @@ export default {
   border-bottom: 1px solid rgba(128, 128, 128, .5);
 }
 
-.drawer.is-medium {
-  width: 92vw;
+.drawer{
   box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.25);
 }
 
+.drawer {
+  width: 92vw;
+}
+
 @media screen and (min-width: 768px) {
-  .drawer.is-medium {
-    width: 480px;
-  }
+  .drawer, .drawer.is-medium { width: 480px; }
+
+  .drawer.is-large { width: 720px; }
+
+  .drawer.is-small { width: 320px; }
+  
+
   .drawer-enter,
   .drawer-enter-from,
   .drawer-leave-to {
     transform: translate3d(500px, 0, 0);
+  }
+
+  .drawer.is-large.drawer-enter,
+  .drawer.is-large.drawer-enter-from,
+  .drawer.is-large.drawer-leave-to {
+    transform: translate3d(730px, 0, 0);
+  }
+
+  .drawer.is-small.drawer-enter,
+  .drawer.is-small.drawer-enter-from,
+  .drawer.is-small.drawer-leave-to {
+    transform: translate3d(330px, 0, 0);
   }
 }
 </style>

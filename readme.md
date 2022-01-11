@@ -85,4 +85,21 @@ export default {
 </Gaveta>
 ```
 
+#### Drawer Sizes
+
+Customize the maximum size of the drawer by adding the optional `size` property. 
+
+```vue
+<Gaveta size="is-large">
+```
+
+Below a screen size of `768px` the drawer will always be 92% of the total screen width. Above those screen dimenions the drawer sizes are: 
+
+value | result
+------|-------
+`is-small` | Drawer will be 320px wide 
+`is-medium` | (Default) Drawer will be 480px wide 
+`is-large` | Drawer will be 720px wide 
+
+
 Created by [@13protons](https://13protons.com) for [Farebox.io](https://farebox.io)
