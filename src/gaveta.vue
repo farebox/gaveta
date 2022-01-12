@@ -17,7 +17,6 @@
             </svg>
           </template>
         </button>
-
         <template v-if="hasTitle">
           <h3 v-if="bareTitle" class="gaveta-title">
             <slot name="title" />
@@ -37,10 +36,7 @@
 export default {
   props: {
     active: { type: Boolean, default: false },
-    size: { 
-      type: String, default: 'is-medium',
-      enum: ['is-small', 'is-medium', 'is-large']
-    }
+    size: { type: String, default: 'is-medium' }
   },
   directives: {
     focus: {
@@ -63,9 +59,6 @@ export default {
       this.$emit('close');
     },
   },
-  mounted() {
-    console.log(this.$slots);
-  }
 };
 </script>
 
@@ -137,18 +130,14 @@ export default {
   transition: transform 0.3s ease-in-out;
   overflow-x: scroll;
   padding: var(--gaveta-padding, 1.25em);
+
+  box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.25);
+  width: 92vw;
 }
+
 .drawer .gaveta-title {
   padding-bottom: .5em;
   border-bottom: 1px solid rgba(128, 128, 128, .5);
-}
-
-.drawer{
-  box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.25);
-}
-
-.drawer {
-  width: 92vw;
 }
 
 @media screen and (min-width: 768px) {

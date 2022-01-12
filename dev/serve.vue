@@ -4,7 +4,7 @@
       <button @click="active=true">You Can't Argue With Results</button>
     </Readme>
 
-    <Gaveta :active="active" @close="active = false" size="is-medium">
+    <Gaveta :active="active" @close="active = false">
       <template v-slot:title>
         A flexible drawer for your UI
       </template>
@@ -58,7 +58,7 @@ import Vue from 'vue';
 import Gaveta from '@/gaveta.vue';
 import Readme from '../readme.md'
 
-export default Vue.extend({
+export default {
   name: 'ServeDev',
   components: {
     Gaveta,
@@ -66,10 +66,10 @@ export default Vue.extend({
   },
   data() {
     return {
-      active: false,
+      active: false
     };
   },
-});
+}
 </script>
 
 <style>
